@@ -157,7 +157,22 @@ const Level1 = () => {
                 hideImg1 === "m60" || hideImg2 === "m60" ? "hidden" : "s",
             }}
           />
-        
+          <Pic
+            src={clicked == "m70" ? m7 : q}
+            imgClick={() => flipImg("m70")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m70" || hideImg2 === "m70" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={clicked == "m80" ? m8 : q}
+            imgClick={() => flipImg("m80")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m80" || hideImg2 === "m80" ? "hidden" : "s",
+            }}
+          />
         </div>
       </div>
     </>
