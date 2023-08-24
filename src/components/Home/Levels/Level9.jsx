@@ -34,7 +34,7 @@ const Level9 = ({ setLevel,score,setScore }) => {
     // console.log(hideImg);
   }, [flipped, clicked]);
   useEffect(() => {
-    if (score >= 4410) setLevel(10);
+    if (score >= 4400) setLevel(10);
     else setLevel(9)
   }, [score]);
   return (
