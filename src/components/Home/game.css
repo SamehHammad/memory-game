@@ -1,29 +1,20 @@
 .game-area {
   flex-wrap: wrap;
-  width: 350px;
+  width: 300px;
   justify-content: space-between;
   margin: 0 auto;
 }
 img {
-  margin-top: 10px;
-  width: 80px;
-  height: 100px;
+  margin: 7px 1px;
+  width: 60px;
+  height: 70px;
 }
 img:active {
-  transform: rotatey(180deg);
-  transition: 0.5s;
+  transform: rotatey(360deg);
+  transition: 0.3s;
 }
 
 .active {
   transform: rotatex(180deg);
   transition: 2s;
-}
-@keyframes imgActive {
-  from {
-    position: absolute;
-    left: 0;
-  }
-  to {
-    left: 50%;
-  }
 }

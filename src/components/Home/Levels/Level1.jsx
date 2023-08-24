@@ -152,7 +152,30 @@ const Level1 = ({ setLevel,score,setScore }) => {
                 hideImg1 === "m8" || hideImg2 === "m8" ? "hidden" : "s",
             }}
           />
-          
+          <Pic
+            src={clicked == "m60" ? m6 : q}
+            imgClick={() => flipImg("m60")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m60" || hideImg2 === "m60" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={clicked == "m70" ? m7 : q}
+            imgClick={() => flipImg("m70")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m70" || hideImg2 === "m70" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={clicked == "m80" ? m8 : q}
+            imgClick={() => flipImg("m80")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m80" || hideImg2 === "m80" ? "hidden" : "s",
+            }}
+          />
         </div>
       </div>
     </>

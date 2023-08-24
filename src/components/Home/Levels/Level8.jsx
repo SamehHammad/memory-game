@@ -12,7 +12,7 @@ import m8 from "../../../assets/shapes/8.png";
 import "../game.css";
 import Pic from "../Pic";
 
-const Level8 = ({ setLevel,score,setScore }) => {
+const Level8 = ({ setLevel, score, setScore }) => {
   const [clicked, setClicked] = useState();
   const [flipped, setFlipped] = useState([]);
   const [hideImg1, setHideImg1] = useState("");
@@ -30,18 +30,18 @@ const Level8 = ({ setLevel,score,setScore }) => {
       setScore(score + 120);
       setHideImg1(flipped[flipped.length - 1]);
       setHideImg2(flipped[flipped.length - 2]);
-    } 
+    }
     // console.log(hideImg);
   }, [flipped, clicked]);
   useEffect(() => {
     if (score >= 3200) setLevel(9);
-    else setLevel(8)
+    else setLevel(8);
   }, [score]);
   return (
     <>
-       <h1>
-          Level <span style={{ color: "red" }}>8</span>
-        </h1>
+      <h1>
+        Level <span style={{ color: "red" }}>8</span>
+      </h1>
       <div className="d-flex align-items-center flex-column">
         <h1>
           Score <span style={{ color: "red" }}>{score}</span>
@@ -104,14 +104,6 @@ const Level8 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m50" ? m5 : q}
-            imgClick={() => flipImg("m50")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m50" || hideImg2 === "m50" ? "hidden" : "s",
-            }}
-          />
-          <Pic
             src={clicked == "m6" ? m6 : q}
             imgClick={() => flipImg("m6")}
             imgStyle={{
@@ -144,14 +136,6 @@ const Level8 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m8" ? m8 : q}
-            imgClick={() => flipImg("m8")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m8" || hideImg2 === "m8" ? "hidden" : "s",
-            }}
-          />
-          <Pic
             src={clicked == "m60" ? m6 : q}
             imgClick={() => flipImg("m60")}
             imgStyle={{
@@ -165,6 +149,22 @@ const Level8 = ({ setLevel,score,setScore }) => {
             imgStyle={{
               visibility:
                 hideImg1 === "m70" || hideImg2 === "m70" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={clicked == "m50" ? m5 : q}
+            imgClick={() => flipImg("m50")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m50" || hideImg2 === "m50" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={clicked == "m8" ? m8 : q}
+            imgClick={() => flipImg("m8")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m8" || hideImg2 === "m8" ? "hidden" : "s",
             }}
           />
           <Pic
