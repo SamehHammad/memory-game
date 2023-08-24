@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
-import q from "../../assets/mobs/q.jpg";
-import m1 from "../../assets/mobs/1.jpg";
-import m2 from "../../assets/mobs/2.jpg";
-import m3 from "../../assets/mobs/3.jpg";
-import m4 from "../../assets/mobs/4.jpg";
-import m5 from "../../assets/mobs/5.jpg";
-import m6 from "../../assets/mobs/6.jpg";
-import m7 from "../../assets/mobs/7.jpg";
-import m8 from "../../assets/mobs/8.jpg";
+import q from "../../../assets/colors/q.jpeg";
+import m1 from "../../../assets/colors/1.jpg";
+import m2 from "../../../assets/colors/2.jpeg";
+import m3 from "../../../assets/colors/3.jpeg";
+import m4 from "../../../assets/colors/4.jpg";
+import m5 from "../../../assets/colors/5.jpeg";
+import m6 from "../../../assets/colors/6.jpg";
+import m7 from "../../../assets/colors/7.png";
+import m8 from "../../../assets/colors/8.jpg";
 
-import "./game.css";
-import Pic from "./Pic";
+import "../game.css";
+import Pic from "../Pic";
 
-const Level1 = () => {
+const Level7 = ({ setLevel,score,setScore }) => {
   const [clicked, setClicked] = useState();
   const [flipped, setFlipped] = useState([]);
-  const [score, setScore] = useState(0);
-  const [mistake, setmistake] = useState(0);
   const [hideImg1, setHideImg1] = useState("");
   const [hideImg2, setHideImg2] = useState("");
 
@@ -29,17 +27,21 @@ const Level1 = () => {
       flipped[flipped.length - 1] === flipped[flipped.length - 2] + "0" ||
       flipped[flipped.length - 1] + "0" === flipped[flipped.length - 2]
     ) {
-      setScore(score + 8);
+      setScore(score + 100);
       setHideImg1(flipped[flipped.length - 1]);
       setHideImg2(flipped[flipped.length - 2]);
-      // setHideImg([flipped[flipped.length - 1], flipped[flipped.length - 2]]);
-    } if (score == 64) {
-      alert("You win")
-    }
+    } 
     // console.log(hideImg);
   }, [flipped, clicked]);
+  useEffect(() => {
+    if (score >= 2250) setLevel(8);
+    else setLevel(7)
+  }, [score]);
   return (
     <>
+       <h1>
+          Level <span style={{ color: "red" }}>7</span>
+        </h1>
       <div className="d-flex align-items-center flex-column">
         <h1>
           Score <span style={{ color: "red" }}>{score}</span>
@@ -179,4 +181,4 @@ const Level1 = () => {
   );
 };
 
-export default Level1;
+export default Level7;

@@ -1,12 +1,13 @@
 import "./App.css";
-import Navv from "./components/Nav/Navv";
-import Level1 from "./components/Home/Level1";
+import { Route, Routes } from "react-router-dom";
+import Levels from "./components/Home/Levels";
 
 function App() {
   return (
     <>
-        <Navv />
-        <Level1 />
+      <Routes>
+        <Route path={"/similar-pics" } element={<Levels />} />
+      </Routes>
     </>
   );
 }
