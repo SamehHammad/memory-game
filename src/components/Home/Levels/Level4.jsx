@@ -8,16 +8,23 @@ import m5 from "../../../assets/drinks/5.jpg";
 import m6 from "../../../assets/drinks/6.jpg";
 import m7 from "../../../assets/drinks/7.jpg";
 import m8 from "../../../assets/drinks/8.jpeg";
+import m9 from "../../../assets/drinks/9.jpg";
+import m10 from "../../../assets/drinks/10.jpg";
 
 import "../game.css";
 import Pic from "../Pic";
 
-const Level4 = ({ setLevel,score,setScore }) => {
+const Level4 = ({ setLevel, score, setScore }) => {
   const [clicked, setClicked] = useState();
   const [flipped, setFlipped] = useState([]);
   const [hideImg1, setHideImg1] = useState("");
   const [hideImg2, setHideImg2] = useState("");
-
+  const [showAll, setShowAll] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowAll(false);
+    }, 2000);
+  }, []);
   const flipImg = (m) => {
     setClicked(m);
     flipped.push(m);
@@ -34,21 +41,21 @@ const Level4 = ({ setLevel,score,setScore }) => {
     // console.log(hideImg);
   }, [flipped, clicked]);
   useEffect(() => {
-    if (score >= 400) setLevel(5);
-    else setLevel(4)
+    if (score >= 390) setLevel(5);
+    else setLevel(4);
   }, [score]);
   return (
     <>
-       <h1>
-          Level <span style={{ color: "red" }}>4</span>
-        </h1>
+      <h1>
+        Level <span style={{ color: "red" }}>4</span>
+      </h1>
       <div className="d-flex align-items-center flex-column">
         <h1>
           Score <span style={{ color: "red" }}>{score}</span>
         </h1>
-        <div className="d-flex game-area">
+        <div className="d-flex game-area" style={{width:"350px"}}>
           <Pic
-            src={clicked == "m1" ? m1 : q}
+            src={showAll ? m1 : clicked == "m1" ? m1 : q}
             imgClick={() => flipImg("m1")}
             imgStyle={{
               visibility:
@@ -56,7 +63,15 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m2" ? m2 : q}
+            src={showAll ? m10 : clicked == "m10000" ? m10 : q}
+            imgClick={() => flipImg("m10000")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m10000" || hideImg2 === "m10000" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m2 : clicked == "m2" ? m2 : q}
             imgClick={() => flipImg("m2")}
             imgStyle={{
               visibility:
@@ -64,7 +79,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m3" ? m3 : q}
+            src={showAll ? m3 : clicked == "m3" ? m3 : q}
             imgClick={() => flipImg("m3")}
             imgStyle={{
               visibility:
@@ -72,7 +87,15 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m10" ? m1 : q}
+            src={showAll ? m9 : clicked == "m90" ? m9 : q}
+            imgClick={() => flipImg("m90")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m90" || hideImg2 === "m90" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m1 : clicked == "m10" ? m1 : q}
             imgClick={() => flipImg("m10")}
             imgStyle={{
               visibility:
@@ -80,23 +103,31 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m4" ? m4 : q}
+            src={showAll ? m4 : clicked == "m4" ? m4 : q}
             imgClick={() => flipImg("m4")}
             imgStyle={{
               visibility:
                 hideImg1 === "m4" || hideImg2 === "m4" ? "hidden" : "s",
             }}
           />
-            <Pic
-              src={clicked == "m5" ? m5 : q}
-              imgClick={() => flipImg("m5")}
-              imgStyle={{
-                visibility:
-                  hideImg1 === "m5" || hideImg2 === "m5" ? "hidden" : "s",
-              }}
-            />
           <Pic
-            src={clicked == "m30" ? m3 : q}
+            src={showAll ? m5 : clicked == "m5" ? m5 : q}
+            imgClick={() => flipImg("m5")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m5" || hideImg2 === "m5" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m9 : clicked == "m9" ? m9 : q}
+            imgClick={() => flipImg("m9")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m9" || hideImg2 === "m9" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m3 : clicked == "m30" ? m3 : q}
             imgClick={() => flipImg("m30")}
             imgStyle={{
               visibility:
@@ -104,7 +135,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m50" ? m5 : q}
+            src={showAll ? m5 : clicked == "m50" ? m5 : q}
             imgClick={() => flipImg("m50")}
             imgStyle={{
               visibility:
@@ -112,15 +143,23 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m6" ? m6 : q}
+            src={showAll ? m6 : clicked == "m6" ? m6 : q}
             imgClick={() => flipImg("m6")}
             imgStyle={{
               visibility:
                 hideImg1 === "m6" || hideImg2 === "m6" ? "hidden" : "s",
             }}
+          />{" "}
+          <Pic
+            src={showAll ? m10 : clicked == "m1000" ? m10 : q}
+            imgClick={() => flipImg("m1000")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m1000" || hideImg2 === "m1000" ? "hidden" : "s",
+            }}
           />
           <Pic
-            src={clicked == "m20" ? m2 : q}
+            src={showAll ? m2 : clicked == "m20" ? m2 : q}
             imgClick={() => flipImg("m20")}
             imgStyle={{
               visibility:
@@ -128,7 +167,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m7" ? m7 : q}
+            src={showAll ? m7 : clicked == "m7" ? m7 : q}
             imgClick={() => flipImg("m7")}
             imgStyle={{
               visibility:
@@ -136,7 +175,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m40" ? m4 : q}
+            src={showAll ? m4 : clicked == "m40" ? m4 : q}
             imgClick={() => flipImg("m40")}
             imgStyle={{
               visibility:
@@ -144,7 +183,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m8" ? m8 : q}
+            src={showAll ? m8 : clicked == "m8" ? m8 : q}
             imgClick={() => flipImg("m8")}
             imgStyle={{
               visibility:
@@ -152,7 +191,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m60" ? m6 : q}
+            src={showAll ? m6 : clicked == "m60" ? m6 : q}
             imgClick={() => flipImg("m60")}
             imgStyle={{
               visibility:
@@ -160,7 +199,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m70" ? m7 : q}
+            src={showAll ? m7 : clicked == "m70" ? m7 : q}
             imgClick={() => flipImg("m70")}
             imgStyle={{
               visibility:
@@ -168,7 +207,7 @@ const Level4 = ({ setLevel,score,setScore }) => {
             }}
           />
           <Pic
-            src={clicked == "m80" ? m8 : q}
+            src={showAll ? m8 : clicked == "m80" ? m8 : q}
             imgClick={() => flipImg("m80")}
             imgStyle={{
               visibility:

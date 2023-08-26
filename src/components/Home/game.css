@@ -1,13 +1,26 @@
 .game-area {
   flex-wrap: wrap;
-  width: 300px;
+  flex-grow: 1;
+  width: 320px;
   justify-content: space-between;
   margin: 0 auto;
+  border-left: 5px solid hsla(125, 94%, 46%, 0.451);
+  border-right: 5px solid hsla(206, 39%, 17%, 0.849);
+  border-top: 5px solid hsla(206, 39%, 17%, 0.849);
+  border-bottom: 5px solid hsla(125, 94%, 46%, 0.451);
+  box-shadow: 5px 5px 10px rgba(1, 1, 19, 0.747);
+  background-color: rgb(231, 231, 210);
+  padding: 10px;
 }
 img {
   margin: 7px 1px;
   width: 60px;
   height: 70px;
+  border-left: 1px solid hsla(125, 94%, 46%, 0.451);
+  border-right: 1px solid hsla(206, 39%, 17%, 0.849);
+  border-top: 1px solid hsla(206, 39%, 17%, 0.849);
+  border-bottom: 1px solid hsla(125, 94%, 46%, 0.451);
+  box-shadow: 1px 1px 10px rgba(55, 167, 74, 0.747);
 }
 img:active {
   transform: rotatey(360deg);
