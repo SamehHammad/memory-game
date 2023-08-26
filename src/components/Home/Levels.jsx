@@ -12,8 +12,8 @@ import Level10 from "./Levels/Level10";
 import Winner from "./Levels/Winner";
 
 const Levels = () => {
-  const [Level, setLevel] = useState(7);
-  const [score, setScore] = useState(2210);
+  const [Level, setLevel] = useState(1);
+  const [score, setScore] = useState(0);
 
   if (Level == 1)
     return <Level1 setLevel={setLevel} score={score} setScore={setScore} />;
