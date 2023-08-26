@@ -13,7 +13,7 @@ import Winner from "./Levels/Winner";
 
 const Levels = () => {
   const [Level, setLevel] = useState(1);
-  const [score, setScore] = useState(3600);
+  const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
 
