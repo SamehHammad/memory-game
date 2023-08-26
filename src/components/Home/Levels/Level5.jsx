@@ -16,7 +16,7 @@ import m12 from "../../../assets/dogs/12.jpg";
 import "../game.css";
 import Pic from "../Pic";
 
-const Level5 = ({ setLevel, score, setScore }) => {
+const Level5 = ({ setLevel, score, setScore,timer,min }) => {
   const [clicked, setClicked] = useState();
   const [flipped, setFlipped] = useState([]);
   const [hideImg1, setHideImg1] = useState("");
@@ -48,14 +48,19 @@ const Level5 = ({ setLevel, score, setScore }) => {
   }, [score]);
   return (
     <>
-      <h1>
-        Level <span style={{ color: "red" }}>5</span>
-      </h1>
-      <div className="d-flex align-items-center flex-column">
-        <h1>
+      <div className="d-flex justify-content-between m-5">
+        <h1 className="level">
+          Level <span style={{ color: "red" }}>5</span>
+        </h1>{" "}
+        <h1 className="score">
           Score <span style={{ color: "red" }}>{score}</span>
         </h1>
-        <div className="d-flex game-area" style={{ width: "420px" }}>
+        <h1 className="timer">
+          <span style={{ color: "red" }}>{min}</span> : 
+          <span style={{ color: "red" }}> {timer}</span>
+        </h1>
+      </div>
+        <div className="d-flex game-area" style={{ width: "320px" }}>
           <Pic
             src={showAll ? m12 : clicked == "m120" ? m12 : q}
             imgClick={() => flipImg("m120")}
@@ -250,7 +255,6 @@ const Level5 = ({ setLevel, score, setScore }) => {
             }}
           />
         </div>
-      </div>
     </>
   );
 };

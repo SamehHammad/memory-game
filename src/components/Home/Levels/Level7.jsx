@@ -19,7 +19,7 @@ import m15 from "../../../assets/colors/15.jpeg";
 import "../game.css";
 import Pic from "../Pic";
 
-const Level7 = ({ setLevel, score, setScore }) => {
+const Level7 = ({ setLevel, score, setScore, timer, min }) => {
   const [clicked, setClicked] = useState();
   const [flipped, setFlipped] = useState([]);
   const [hideImg1, setHideImg1] = useState("");
@@ -51,255 +51,250 @@ const Level7 = ({ setLevel, score, setScore }) => {
   }, [score]);
   return (
     <>
-      <h1>
-        Level <span style={{ color: "red" }}>7</span>
-      </h1>
-      <div className="d-flex align-items-center flex-column">
-        <h1>
+      <div className="d-flex justify-content-between m-5">
+        <h1 className="level">
+          Level <span style={{ color: "red" }}>2</span>
+        </h1>{" "}
+        <h1 className="score">
           Score <span style={{ color: "red" }}>{score}</span>
         </h1>
-        <div className="d-flex game-area" style={{ width: "450px" }}>
-          <Pic
-            src={showAll ? m13 : clicked == "m130" ? m13 : q}
-            imgClick={() => flipImg("m130")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m13" || hideImg2 === "m13" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m14 : clicked == "m140" ? m14 : q}
-            imgClick={() => flipImg("m140")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m140" || hideImg2 === "m140" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m15 : clicked == "m150" ? m15 : q}
-            imgClick={() => flipImg("m150")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m150" || hideImg2 === "m150" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m1 : clicked == "m1" ? m1 : q}
-            imgClick={() => flipImg("m1")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m1" || hideImg2 === "m1" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m2 : clicked == "m2" ? m2 : q}
-            imgClick={() => flipImg("m2")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m2" || hideImg2 === "m2" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m3 : clicked == "m3" ? m3 : q}
-            imgClick={() => flipImg("m3")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m3" || hideImg2 === "m3" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m12 : clicked == "m12" ? m12 : q}
-            imgClick={() => flipImg("m12")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m12" || hideImg2 === "m12" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m12 : clicked == "m120" ? m12 : q}
-            imgClick={() => flipImg("m120")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m120" || hideImg2 === "m120" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m1 : clicked == "m10" ? m1 : q}
-            imgClick={() => flipImg("m10")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m10" || hideImg2 === "m10" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m4 : clicked == "m4" ? m4 : q}
-            imgClick={() => flipImg("m4")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m4" || hideImg2 === "m4" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m13 : clicked == "m13" ? m13 : q}
-            imgClick={() => flipImg("m13")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m13" || hideImg2 === "m13" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m11 : clicked == "m110" ? m11 : q}
-            imgClick={() => flipImg("m110")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m110" || hideImg2 === "m110" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m9 : clicked == "m9" ? m9 : q}
-            imgClick={() => flipImg("m9")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m9" || hideImg2 === "m9" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m10 : clicked == "m1000" ? m10 : q}
-            imgClick={() => flipImg("m1000")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m1000" || hideImg2 === "m1000" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m9 : clicked == "m90" ? m9 : q}
-            imgClick={() => flipImg("m90")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m90" || hideImg2 === "m90" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m5 : clicked == "m5" ? m5 : q}
-            imgClick={() => flipImg("m5")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m5" || hideImg2 === "m5" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m10 : clicked == "m100" ? m10 : q}
-            imgClick={() => flipImg("m100")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m100" || hideImg2 === "m100" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m11 : clicked == "m11" ? m11 : q}
-            imgClick={() => flipImg("m11")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m11" || hideImg2 === "m11" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m5 : clicked == "m50" ? m5 : q}
-            imgClick={() => flipImg("m50")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m50" || hideImg2 === "m50" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m15 : clicked == "m15" ? m15 : q}
-            imgClick={() => flipImg("m15")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m15" || hideImg2 === "m15" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m14 : clicked == "m14" ? m14 : q}
-            imgClick={() => flipImg("m14")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m14" || hideImg2 === "m14" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m3 : clicked == "m30" ? m3 : q}
-            imgClick={() => flipImg("m30")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m30" || hideImg2 === "m30" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m6 : clicked == "m6" ? m6 : q}
-            imgClick={() => flipImg("m6")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m6" || hideImg2 === "m6" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m2 : clicked == "m20" ? m2 : q}
-            imgClick={() => flipImg("m20")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m20" || hideImg2 === "m20" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m7 : clicked == "m7" ? m7 : q}
-            imgClick={() => flipImg("m7")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m7" || hideImg2 === "m7" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m4 : clicked == "m40" ? m4 : q}
-            imgClick={() => flipImg("m40")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m40" || hideImg2 === "m40" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m8 : clicked == "m8" ? m8 : q}
-            imgClick={() => flipImg("m8")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m8" || hideImg2 === "m8" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m6 : clicked == "m60" ? m6 : q}
-            imgClick={() => flipImg("m60")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m60" || hideImg2 === "m60" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m7 : clicked == "m70" ? m7 : q}
-            imgClick={() => flipImg("m70")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m70" || hideImg2 === "m70" ? "hidden" : "s",
-            }}
-          />
-          <Pic
-            src={showAll ? m8 : clicked == "m80" ? m8 : q}
-            imgClick={() => flipImg("m80")}
-            imgStyle={{
-              visibility:
-                hideImg1 === "m80" || hideImg2 === "m80" ? "hidden" : "s",
-            }}
-          />
-        </div>
+        <h1 className="timer">
+          <span style={{ color: "red" }}>{min}</span> :
+          <span style={{ color: "red" }}> {timer}</span>
+        </h1>
+      </div>
+      <div className="d-flex game-area" style={{ width: "320px" }}>
+        <Pic
+          src={showAll ? m13 : clicked == "m130" ? m13 : q}
+          imgClick={() => flipImg("m130")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m13" || hideImg2 === "m13" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m14 : clicked == "m140" ? m14 : q}
+          imgClick={() => flipImg("m140")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m140" || hideImg2 === "m140" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m15 : clicked == "m150" ? m15 : q}
+          imgClick={() => flipImg("m150")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m150" || hideImg2 === "m150" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m1 : clicked == "m1" ? m1 : q}
+          imgClick={() => flipImg("m1")}
+          imgStyle={{
+            visibility: hideImg1 === "m1" || hideImg2 === "m1" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m2 : clicked == "m2" ? m2 : q}
+          imgClick={() => flipImg("m2")}
+          imgStyle={{
+            visibility: hideImg1 === "m2" || hideImg2 === "m2" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m3 : clicked == "m3" ? m3 : q}
+          imgClick={() => flipImg("m3")}
+          imgStyle={{
+            visibility: hideImg1 === "m3" || hideImg2 === "m3" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m12 : clicked == "m12" ? m12 : q}
+          imgClick={() => flipImg("m12")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m12" || hideImg2 === "m12" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m12 : clicked == "m120" ? m12 : q}
+          imgClick={() => flipImg("m120")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m120" || hideImg2 === "m120" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m1 : clicked == "m10" ? m1 : q}
+          imgClick={() => flipImg("m10")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m10" || hideImg2 === "m10" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m4 : clicked == "m4" ? m4 : q}
+          imgClick={() => flipImg("m4")}
+          imgStyle={{
+            visibility: hideImg1 === "m4" || hideImg2 === "m4" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m13 : clicked == "m13" ? m13 : q}
+          imgClick={() => flipImg("m13")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m13" || hideImg2 === "m13" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m11 : clicked == "m110" ? m11 : q}
+          imgClick={() => flipImg("m110")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m110" || hideImg2 === "m110" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m9 : clicked == "m9" ? m9 : q}
+          imgClick={() => flipImg("m9")}
+          imgStyle={{
+            visibility: hideImg1 === "m9" || hideImg2 === "m9" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m10 : clicked == "m1000" ? m10 : q}
+          imgClick={() => flipImg("m1000")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m1000" || hideImg2 === "m1000" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m9 : clicked == "m90" ? m9 : q}
+          imgClick={() => flipImg("m90")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m90" || hideImg2 === "m90" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m5 : clicked == "m5" ? m5 : q}
+          imgClick={() => flipImg("m5")}
+          imgStyle={{
+            visibility: hideImg1 === "m5" || hideImg2 === "m5" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m10 : clicked == "m100" ? m10 : q}
+          imgClick={() => flipImg("m100")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m100" || hideImg2 === "m100" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m11 : clicked == "m11" ? m11 : q}
+          imgClick={() => flipImg("m11")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m11" || hideImg2 === "m11" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m5 : clicked == "m50" ? m5 : q}
+          imgClick={() => flipImg("m50")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m50" || hideImg2 === "m50" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m15 : clicked == "m15" ? m15 : q}
+          imgClick={() => flipImg("m15")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m15" || hideImg2 === "m15" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m14 : clicked == "m14" ? m14 : q}
+          imgClick={() => flipImg("m14")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m14" || hideImg2 === "m14" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m3 : clicked == "m30" ? m3 : q}
+          imgClick={() => flipImg("m30")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m30" || hideImg2 === "m30" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m6 : clicked == "m6" ? m6 : q}
+          imgClick={() => flipImg("m6")}
+          imgStyle={{
+            visibility: hideImg1 === "m6" || hideImg2 === "m6" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m2 : clicked == "m20" ? m2 : q}
+          imgClick={() => flipImg("m20")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m20" || hideImg2 === "m20" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m7 : clicked == "m7" ? m7 : q}
+          imgClick={() => flipImg("m7")}
+          imgStyle={{
+            visibility: hideImg1 === "m7" || hideImg2 === "m7" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m4 : clicked == "m40" ? m4 : q}
+          imgClick={() => flipImg("m40")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m40" || hideImg2 === "m40" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m8 : clicked == "m8" ? m8 : q}
+          imgClick={() => flipImg("m8")}
+          imgStyle={{
+            visibility: hideImg1 === "m8" || hideImg2 === "m8" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m6 : clicked == "m60" ? m6 : q}
+          imgClick={() => flipImg("m60")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m60" || hideImg2 === "m60" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m7 : clicked == "m70" ? m7 : q}
+          imgClick={() => flipImg("m70")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m70" || hideImg2 === "m70" ? "hidden" : "s",
+          }}
+        />
+        <Pic
+          src={showAll ? m8 : clicked == "m80" ? m8 : q}
+          imgClick={() => flipImg("m80")}
+          imgStyle={{
+            visibility:
+              hideImg1 === "m80" || hideImg2 === "m80" ? "hidden" : "s",
+          }}
+        />
       </div>
     </>
   );

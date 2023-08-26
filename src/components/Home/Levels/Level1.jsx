@@ -5,7 +5,7 @@ import m2 from "../../../assets/mobs/2.jpg";
 import "../game.css";
 import Pic from "../Pic";
 
-const Level1 = ({ setLevel, score, setScore }) => {
+const Level1 = ({ setLevel, score, setScore, timer,min }) => {
   const [clicked, setClicked] = useState();
   const [flipped, setFlipped] = useState([]);
   const [hideImg1, setHideImg1] = useState("");
@@ -39,16 +39,25 @@ const Level1 = ({ setLevel, score, setScore }) => {
   }, [score]);
   return (
     <>
-      <h1>
-        Level <span style={{ color: "red" }}>1</span>
-      </h1>
-      <div className="d-flex align-items-center flex-column">
-        <h1>
-          Score <span style={{ color: "red" }}>{score}</span>
+      <div className="d-flex justify-content-between m-5">
+        <h1 className="level">
+          Level <span style={{ color: "red" }}>1</span>
+        </h1>{" "}
+        <h1 className="score">
+          Score : <span style={{ color: "red" }}>{score}</span>
         </h1>
-        <div className="d-flex game-area" style={{ width: "180px",padding:"15px" }}>
+        <h1 className="timer">
+          <span style={{ color: "red" }}>{min}</span> : 
+          <span style={{ color: "red" }}> {timer}</span>
+        </h1>
+      </div>
+      <div className="d-flex align-items-center flex-column ">
+        <div
+          className="d-flex game-area"
+          style={{ width: "150px", padding: "15px" }}
+        >
           <Pic
-            src={showAll ? m1 :clicked == "m1" ? m1 : q}
+            src={showAll ? m1 : clicked == "m1" ? m1 : q}
             imgClick={() => flipImg("m1")}
             imgStyle={{
               visibility:
@@ -65,7 +74,7 @@ const Level1 = ({ setLevel, score, setScore }) => {
           />
 
           <Pic
-            src={showAll ? m1 :clicked == "m10" ? m1 : q}
+            src={showAll ? m1 : clicked == "m10" ? m1 : q}
             imgClick={() => flipImg("m10")}
             imgStyle={{
               visibility:
@@ -74,7 +83,7 @@ const Level1 = ({ setLevel, score, setScore }) => {
           />
 
           <Pic
-            src={showAll ? m2 :clicked == "m20" ? m2 : q}
+            src={showAll ? m2 : clicked == "m20" ? m2 : q}
             imgClick={() => flipImg("m20")}
             imgStyle={{
               visibility:
