@@ -10,12 +10,14 @@ import Level8 from "./Levels/Level8";
 import Level9 from "./Levels/Level9";
 import Level10 from "./Levels/Level10";
 import Winner from "./Levels/Winner";
+import Loser from "./Levels/Loser";
 
 const Levels = () => {
-  const [Level, setLevel] = useState(1);
+  const [Level, setLevel] = useState(7);
   const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [mistake, setMistake] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,6 +41,8 @@ const Levels = () => {
         setScore={setScore}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
   if (Level == 2)
@@ -49,6 +53,8 @@ const Levels = () => {
         setScore={setScore}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
   if (Level == 3)
@@ -59,6 +65,8 @@ const Levels = () => {
         setScore={setScore}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
   if (Level == 4)
@@ -69,6 +77,8 @@ const Levels = () => {
         setScore={setScore}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
   if (Level == 5)
@@ -79,6 +89,8 @@ const Levels = () => {
         setScore={setScore}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
   if (Level == 6)
@@ -89,6 +101,8 @@ const Levels = () => {
         setScore={setScore}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
   if (Level == 7)
@@ -99,6 +113,8 @@ const Levels = () => {
         setScore={setScore}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
   if (Level == 8)
@@ -141,6 +157,22 @@ const Levels = () => {
         setMinutes={setMinutes}
         timer={seconds}
         min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
+      />
+    );
+  if (Level == 12)
+    return (
+      <Loser
+        setLevel={setLevel}
+        score={score}
+        setScore={setScore}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
+        timer={seconds}
+        min={minutes}
+        mistake={mistake}
+        setMistake={setMistake}
       />
     );
 };

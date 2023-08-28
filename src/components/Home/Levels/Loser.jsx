@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./winner.css";
 import { Button } from "react-bootstrap";
-const Winner = ({
+const Loser = ({
   score,
   timer,
   min,
@@ -16,18 +16,21 @@ const Winner = ({
   const [minEnd, setminEnd] = useState(min);
   return (
     <div className="winner-congratulations">
-      <h1 className="cong">Congratulations!</h1>
-      <p>You win!</p>
+      <h1 className="cong">Good Luck !</h1>
+      <p>You lost!</p>
       <p>
-        Your Score! <span style={{ color: "green" }}>{score}</span> $
+        Your Score! <span> {score}</span> $
       </p>
       <p>
-        Mistakes! <span style={{ color: "green" }}> {mistake}</span> $
+        Mistakes! <span> {mistake-1}</span> 
       </p>
       <p>
         Time!
-         <span style={{ color: "green" }}>{minEnd < 10 ? " 0" + minEnd : minEnd}</span> :
-        <span style={{ color: "green" }}>
+        <span style={{ color: "red" }}>
+          {minEnd < 10 ? " 0" + minEnd : minEnd}
+        </span>{" "}
+        :
+        <span style={{ color: "red" }}>
           {" "}
           {timeEnd < 10 ? " 0" + timeEnd : timeEnd}
         </span>
@@ -51,4 +54,4 @@ const Winner = ({
   );
 };
 
-export default Winner;
+export default Loser;

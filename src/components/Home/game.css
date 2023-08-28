@@ -54,3 +54,17 @@ img:active {
   border-bottom: 2px solid hsla(125, 94%, 46%, 0.451);
   box-shadow: 2px 1px 10px rgba(55, 167, 74, 0.747);
 }
+.health {
+  height: 7px;
+  background-color: bisque;
+  border-left: 2px solid hsla(125, 94%, 46%, 0.451);
+  border-right: 2px solid hsla(206, 39%, 17%, 0.849);
+  border-top: 2px solid hsla(206, 39%, 17%, 0.849);
+  border-bottom: 2px solid hsla(125, 94%, 46%, 0.451);
+  box-shadow: 2px 1px 10px rgba(55, 167, 74, 0.747);
+}
+.user-health {
+  background-color: rgb(255, 0, 0);
+  height: 5px;
+  transition: 1.5s;
+}
