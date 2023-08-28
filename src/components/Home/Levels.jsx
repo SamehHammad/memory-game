@@ -13,7 +13,7 @@ import Winner from "./Levels/Winner";
 import Loser from "./Levels/Loser";
 
 const Levels = () => {
-  const [Level, setLevel] = useState(5);
+  const [Level, setLevel] = useState(1);
   const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -173,6 +173,7 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
       />
     );
 };
