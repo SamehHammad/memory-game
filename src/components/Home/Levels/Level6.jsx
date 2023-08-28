@@ -30,6 +30,15 @@ const Level6 = ({ setLevel,
   const [hideImg2, setHideImg2] = useState("");
   const [showAll, setShowAll] = useState(true);
   useEffect(() => {
+    setTimeout(() => {
+      setShowAll(false);
+    }, 2000);
+  }, []);
+  const flipImg = (m) => {
+    setClicked(m);
+    flipped.push(m);
+  };
+  useEffect(() => {
     const img1 = flipped[flipped.length - 1];
     const img2 = flipped[flipped.length - 2];
     if (img1 && img2) {
