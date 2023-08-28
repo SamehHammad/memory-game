@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: hsla(125, 84%, 71%, 0.911);
+  }
+  body {
+  background-color: #0d071df5 !important; 
+   height: 100vh;
+  }

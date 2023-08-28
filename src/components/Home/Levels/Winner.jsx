@@ -34,8 +34,9 @@ const Winner = ({
       </p>
 
       <Button
+        
         variant="info"
-        style={{ width: "65%" }}
+        style={{ width: "35%", height: "30px", paddingTop: 0 }}
         className="d-block m-auto"
         onClick={() => {
           setLevel(1);

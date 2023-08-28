@@ -1,12 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background: linear-gradient(rgb(117, 141, 51), rgba(8, 5, 12, 0.404));
-  height: 100vh;
-}
+
 .game-area {
   flex-wrap: wrap;
   flex-grow: 1;

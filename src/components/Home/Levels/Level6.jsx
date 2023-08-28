@@ -49,11 +49,16 @@ const Level6 = ({ setLevel,
         setFlipped([]);
       } else {
         setMistake(mistake + 1);
-        if (mistake == 10) {
+        if (mistake == 15) {
           setLevel(12);
         }
       }
     }
+    const interval = setTimeout(() => {
+      setClicked();
+      setFlipped([]);
+    }, 3000);
+    return () => clearTimeout(interval);
   }, [flipped, clicked]);
   useEffect(() => {
     if (score >= 2110) setLevel(7);
@@ -64,7 +69,7 @@ const Level6 = ({ setLevel,
       <div className="health ">
         <div
           className="user-health"
-          style={{ width: mistake * 10 + "%" }}
+          style={{ width: mistake * 6.6666666 + "%" }}
         ></div>
       </div>
       <div className="d-flex justify-content-between m-5">

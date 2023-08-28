@@ -51,6 +51,11 @@ const Level3 = ({
         }
       }
     }
+    const interval = setTimeout(() => {
+      setClicked();
+      setFlipped([]);
+    }, 3000);
+    return () => clearTimeout(interval);
   }, [flipped, clicked]);
   useEffect(() => {
     if (score >= 190) setLevel(4);

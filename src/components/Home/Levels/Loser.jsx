@@ -22,7 +22,7 @@ const Loser = ({
         Your Score! <span> {score}</span> $
       </p>
       <p>
-        Mistakes! <span> {mistake-1}</span> 
+        Mistakes! <span> {mistake - 1}</span>
       </p>
       <p>
         Time!
@@ -38,7 +38,7 @@ const Loser = ({
 
       <Button
         variant="info"
-        style={{ width: "65%" }}
+        style={{ width: "35%", height: "30px", paddingTop: 0 }}
         className="d-block m-auto"
         onClick={() => {
           setLevel(1);
