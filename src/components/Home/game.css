@@ -35,8 +35,8 @@ img:active {
 .timer,
 .score,
 .level {
-  padding: 10px;
-  font-size: 15px;
+  padding: 7px;
+  font-size: 12px;
   border: 2px solid red;
   text-align: center;
   border-radius: 50px;
