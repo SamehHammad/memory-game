@@ -11,6 +11,7 @@ import m8 from "../../../assets/cats/8.jpeg";
 
 import "../game.css";
 import Pic from "../Pic";
+import { ClipLoader } from "react-spinners";
 
 const Level2 = ({
   setLevel,
@@ -26,10 +27,24 @@ const Level2 = ({
   const [hideImg1, setHideImg1] = useState("");
   const [hideImg2, setHideImg2] = useState("");
   const [showAll, setShowAll] = useState(true);
+  const [time, setTime] = useState(3);
+  let [loadingInProgress, setLoading] = useState(true);
+  
+  useEffect(() => {
+    var timer;
+    timer = setInterval(() => {
+      setTime(time - 1);
+      if (time === 0) {
+        setTime(0);
+      }
+    }, 900);
+    return () => clearInterval(timer);
+  });
   useEffect(() => {
     setTimeout(() => {
       setShowAll(false);
-    }, 2000);
+      setLoading(false);
+    }, 3000);
   }, []);
   const flipImg = (m) => {
     setClicked(m);
@@ -84,97 +99,123 @@ const Level2 = ({
           </span>
         </h1>
       </div>
-      <div className="d-flex game-area" style={{ width: "230px" }}>
-        <Pic
-          src={showAll ? m2 : clicked == "m2" ? m2 : q}
-          imgClick={() => flipImg("m2")}
-          imgStyle={{
-            visibility: hideImg1 === "m2" || hideImg2 === "m2" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m3 : clicked == "m3" ? m3 : q}
-          imgClick={() => flipImg("m3")}
-          imgStyle={{
-            visibility: hideImg1 === "m3" || hideImg2 === "m3" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m1 : clicked == "m1" ? m1 : q}
-          imgClick={() => flipImg("m1")}
-          imgStyle={{
-            visibility: hideImg1 === "m1" || hideImg2 === "m1" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m1 : clicked == "m10" ? m1 : q}
-          imgClick={() => flipImg("m10")}
-          imgStyle={{
-            visibility:
-              hideImg1 === "m10" || hideImg2 === "m10" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m3 : clicked == "m30" ? m3 : q}
-          imgClick={() => flipImg("m30")}
-          imgStyle={{
-            visibility:
-              hideImg1 === "m30" || hideImg2 === "m30" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m5 : clicked == "m5" ? m5 : q}
-          imgClick={() => flipImg("m5")}
-          imgStyle={{
-            visibility: hideImg1 === "m5" || hideImg2 === "m5" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m4 : clicked == "m4" ? m4 : q}
-          imgClick={() => flipImg("m4")}
-          imgStyle={{
-            visibility: hideImg1 === "m4" || hideImg2 === "m4" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m5 : clicked == "m50" ? m5 : q}
-          imgClick={() => flipImg("m50")}
-          imgStyle={{
-            visibility:
-              hideImg1 === "m50" || hideImg2 === "m50" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m6 : clicked == "m6" ? m6 : q}
-          imgClick={() => flipImg("m6")}
-          imgStyle={{
-            visibility: hideImg1 === "m6" || hideImg2 === "m6" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m2 : clicked == "m20" ? m2 : q}
-          imgClick={() => flipImg("m20")}
-          imgStyle={{
-            visibility:
-              hideImg1 === "m20" || hideImg2 === "m20" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m4 : clicked == "m40" ? m4 : q}
-          imgClick={() => flipImg("m40")}
-          imgStyle={{
-            visibility:
-              hideImg1 === "m40" || hideImg2 === "m40" ? "hidden" : "s",
-          }}
-        />
-        <Pic
-          src={showAll ? m6 : clicked == "m60" ? m6 : q}
-          imgClick={() => flipImg("m60")}
-          imgStyle={{
-            visibility:
-              hideImg1 === "m60" || hideImg2 === "m60" ? "hidden" : "s",
-          }}
-        />
+      <div className="d-flex align-items-center flex-column ">
+        <div
+          className="d-flex game-area"
+          style={{ width: "230px", padding: "15px" }}
+        >
+          {" "}
+          <Pic
+            src={showAll ? m2 : clicked == "m2" ? m2 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m2")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m2" || hideImg2 === "m2" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m3 : clicked == "m3" ? m3 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m3")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m3" || hideImg2 === "m3" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m1 : clicked == "m1" ? m1 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m1")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m1" || hideImg2 === "m1" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m1 : clicked == "m10" ? m1 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m10")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m10" || hideImg2 === "m10" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m3 : clicked == "m30" ? m3 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m30")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m30" || hideImg2 === "m30" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m5 : clicked == "m5" ? m5 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m5")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m5" || hideImg2 === "m5" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m4 : clicked == "m4" ? m4 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m4")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m4" || hideImg2 === "m4" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m5 : clicked == "m50" ? m5 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m50")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m50" || hideImg2 === "m50" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m6 : clicked == "m6" ? m6 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m6")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m6" || hideImg2 === "m6" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m2 : clicked == "m20" ? m2 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m20")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m20" || hideImg2 === "m20" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m4 : clicked == "m40" ? m4 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m40")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m40" || hideImg2 === "m40" ? "hidden" : "s",
+            }}
+          />
+          <Pic
+            src={showAll ? m6 : clicked == "m60" ? m6 : q}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m60")}
+            imgStyle={{
+              visibility:
+                hideImg1 === "m60" || hideImg2 === "m60" ? "hidden" : "s",
+            }}
+          />
+        </div>
+        {loadingInProgress ? (
+          <div className="s-timer">
+            <h1>{time}</h1>
+
+            <ClipLoader
+              className="spinner"
+              color={"#fff"}
+              loading={loadingInProgress}
+              size={80}
+            />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

@@ -17,9 +17,9 @@ const Loser = ({
   return (
     <div className="winner-congratulations">
       <h1 className="cong">Good Luck !</h1>
-      <p>You lost!</p>
+      <p>Game Over!</p>
       <p>
-        Your Score! <span> {score}</span> $
+        Your Score! <span> {score}</span> Coins
       </p>
       <p>
         Mistakes! <span> {mistake - 1}</span>

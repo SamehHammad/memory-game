@@ -4,6 +4,8 @@ import m1 from "../../../assets/mobs/1.jpg";
 import m2 from "../../../assets/mobs/2.jpg";
 import "../game.css";
 import Pic from "../Pic";
+import { ClipLoader } from "react-spinners";
+
 
 const Level1 = ({
   setLevel,
@@ -19,10 +21,24 @@ const Level1 = ({
   const [hideImg1, setHideImg1] = useState("");
   const [hideImg2, setHideImg2] = useState("");
   const [showAll, setShowAll] = useState(true);
+  const [time, setTime] = useState(3);
+  let [loadingInProgress, setLoading] = useState(true);
+  useEffect(() => {
+    var timer;
+    timer = setInterval(() => {
+      setTime(time - 1);
+      if (time === 0) {
+        setTime(0);
+      }
+    }, 900);
+    return () => clearInterval(timer);
+  });
   useEffect(() => {
     setTimeout(() => {
       setShowAll(false);
-    }, 2000);
+      setLoading(false);
+
+    }, 3000);
   }, []);
 
   const flipImg = (m) => {
@@ -87,15 +103,16 @@ const Level1 = ({
         >
           <Pic
             src={showAll ? m1 : clicked == "m1" ? m1 : q}
-            imgClick={() => flipImg("m1")}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m1")}
             imgStyle={{
               visibility:
                 hideImg1 === "m1" || hideImg2 === "m1" ? "hidden" : "s",
             }}
+            
           />
           <Pic
             src={showAll ? m2 : clicked == "m2" ? m2 : q}
-            imgClick={() => flipImg("m2")}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m2")}
             imgStyle={{
               visibility:
                 hideImg1 === "m2" || hideImg2 === "m2" ? "hidden" : "s",
@@ -104,7 +121,7 @@ const Level1 = ({
 
           <Pic
             src={showAll ? m1 : clicked == "m10" ? m1 : q}
-            imgClick={() => flipImg("m10")}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m10")}
             imgStyle={{
               visibility:
                 hideImg1 === "m10" || hideImg2 === "m10" ? "hidden" : "s",
@@ -113,13 +130,24 @@ const Level1 = ({
 
           <Pic
             src={showAll ? m2 : clicked == "m20" ? m2 : q}
-            imgClick={() => flipImg("m20")}
+            imgClick={loadingInProgress?()=>{}:() => flipImg("m20")}
             imgStyle={{
               visibility:
                 hideImg1 === "m20" || hideImg2 === "m20" ? "hidden" : "s",
             }}
           />
         </div>
+        {loadingInProgress?(<div className="s-timer">
+          <h1>{time}</h1>
+
+          <ClipLoader
+            className="spinner"
+            color={"#fff"}
+            loading={loadingInProgress}
+            size={80}
+            />
+        </div>
+          ):""}
       </div>
     </>
   );

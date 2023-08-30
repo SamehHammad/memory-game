@@ -19,7 +19,7 @@ const Winner = ({
       <h1 className="cong">Congratulations!</h1>
       <p>You win!</p>
       <p>
-        Your Score! <span style={{ color: "green" }}>{score}</span> $
+        Your Score! <span style={{ color: "green" }}>{score}</span> Coins
       </p>
       <p>
         Mistakes! <span style={{ color: "green" }}> {mistake}</span> $

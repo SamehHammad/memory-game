@@ -43,6 +43,9 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
       />
     );
   if (Level == 2)
@@ -55,6 +58,9 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
       />
     );
   if (Level == 3)
@@ -67,6 +73,9 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
       />
     );
   if (Level == 4)
@@ -79,6 +88,9 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
       />
     );
   if (Level == 5)
@@ -91,6 +103,9 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
       />
     );
   if (Level == 6)
@@ -103,6 +118,9 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
       />
     );
   if (Level == 7)
@@ -115,6 +133,9 @@ const Levels = () => {
         min={minutes}
         mistake={mistake}
         setMistake={setMistake}
+        level={Level}
+        setSeconds={setSeconds}
+        setMinutes={setMinutes}
       />
     );
   if (Level == 8)
