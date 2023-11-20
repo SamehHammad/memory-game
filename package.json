@@ -1,7 +1,7 @@
 {
   "name": "memory-game",
   "version": "0.1.0",
-  "homepage": "https://samehhammad.github.io/memory-game/",
+  "homepage": ".",
   "private": true,
   "type": "module",
   "scripts": {
