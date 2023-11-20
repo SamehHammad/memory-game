@@ -80,7 +80,9 @@ const Level1 = ({
           style={{ width: mistake * 10 + "%" }}
         ></div>
       </div>
-      <div className="d-flex justify-content-between m-5">
+      <h1 className="header mt-2">Memory Game</h1>
+
+      <div className="d-flex justify-content-between m-4">
         <h1 className="level">
           Level <span style={{ color: "red" }}>1</span>
         </h1>{" "}
@@ -97,6 +99,7 @@ const Level1 = ({
       </div>
 
       <div className="d-flex align-items-center flex-column ">
+
         <div
           className="d-flex game-area"
           style={{ width: "150px", padding: "15px" }}

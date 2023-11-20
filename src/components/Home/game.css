@@ -78,3 +78,10 @@ img:active {
   top:1.2rem;
   left: 2.2rem;
 }
+.header{
+  font-family: Pacifico, cursive;
+  color: #3498db;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

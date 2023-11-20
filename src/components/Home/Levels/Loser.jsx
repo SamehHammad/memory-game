@@ -15,9 +15,9 @@ const Loser = ({
   const [timeEnd, setTimeEnd] = useState(timer);
   const [minEnd, setminEnd] = useState(min);
   return (
-    <div className="winner-congratulations">
+    <div className="winner-congratulations header">
       <h1 className="cong">Good Luck !</h1>
-      <p>Game Over!</p>
+      <p className="header" style={{color:"red"}}>Game Over!</p>
       <p>
         Your Score! <span> {score}</span> Coins
       </p>
